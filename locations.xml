@@ -1,0 +1,31 @@
+﻿<root>
+  <views>
+    <profile>
+      <feed files="feed_berit.ejs;feed_knut.ejs;feed_lars.ejs;feed_morten.ejs;feed_orjan.ejs;feed_silje.ejs;feed_sissel.ejs;feed_tora.ejs"/>
+    </profile>
+  </views>
+  <img>
+    <profile>
+      <feed>
+        <berit files="1berit.jpg;2berit.jpg;4berit.jpg;5berit.jpg;6berit.jpg;7berit.jpg;8berit.jpg;9berit.jpg"/>
+        <knut files="1knut.jpg;2knut.jpg;4knut.jpg;5knut.jpg;6knut.jpg;7knut.jpg;8knut.jpg;9knut.jpg"/>
+        <lars files="1lars.jpg;2lars.jpg;4lars.jpg;5lars.jpg;6lars.jpg;7lars.jpg;8lars.jpg;9lars.jpg"/>
+        <morten files="1morten.jpg;2morten.jpg;4morten.jpg;5morten.jpg;6morten.jpg;7morten.jpg;8morten.jpg;9morten.jpg"/>
+        <orjan files="1orjan.jpg;2orjan.jpg;4orjan.jpg;5orjan.jpg;6orjan.jpg;7orjan.jpg;8orjan.jpg;9orjan.jpg"/>
+        <silje files="1silje.jpg;2silje.jpg;4silje.jpg;5silje.jpg;6silje.jpg;7silje.jpg;8silje.jpg;9silje.jpg"/>
+        <sissel files="1sissel.jpg;2sissel.jpg;4sissel.jpg;5sissel.jpg;6sissel.jpg;7sissel.jpg;8sissel.jpg;9sissel.jpg"/>
+        <tora files="1tora.jpg;2tora.jpg;4tora.jpg;5tora.jpg;6tora.jpg;7tora.jpg;8tora.jpg;9tora.jpg"/>
+      </feed>
+      <slideshow>
+        <berit files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+        <knut files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+        <lars files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+        <morten files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+        <orjan files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+        <silje files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+        <sissel files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+        <tora files="1.jpg;2.jpg;3.jpg;4.jpg;5.jpg;6.jpg;7.jpg;8.jpg;9.jpg"/>
+      </slideshow>
+    </profile>
+  </img>
+</root>
