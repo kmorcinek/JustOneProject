@@ -126,6 +126,14 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlSampleGenerator\Facets.cs" />
+    <Compile Include="XmlSampleGenerator\Generator.cs" />
+    <Compile Include="XmlSampleGenerator\InstanceAttribute.cs" />
+    <Compile Include="XmlSampleGenerator\InstanceElement.cs" />
+    <Compile Include="XmlSampleGenerator\InstanceGroup.cs" />
+    <Compile Include="XmlSampleGenerator\InstanceObject.cs" />
+    <Compile Include="XmlSampleGenerator\XmlGen.cs" />
+    <Compile Include="XmlSampleGenerator\XmlSampleGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
