@@ -1,4 +1,5 @@
 ﻿using System;
+using JustOneProject.VariousStuff;
 
 namespace JustOneProject
 {
@@ -7,6 +8,9 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+
+
+            new GitPatchesGenerator().GeneratePatches(@"C:\Work\SMT\RL\");
         }
     }
 }
