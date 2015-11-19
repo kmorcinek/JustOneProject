@@ -127,6 +127,7 @@
     <Compile Include="Async\TryAsyncWrapper.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumHelper.cs" />
+    <Compile Include="Presentation\ObsoleteEquals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VariousStuff\ConcatenatingStrings.cs">
