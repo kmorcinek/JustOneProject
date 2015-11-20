@@ -130,6 +130,7 @@
     <Compile Include="Presentation\Side.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Refactorings\ChunksUploader.cs" />
     <Compile Include="VariousStuff\ConcatenatingStrings.cs">
       <SubType>Code</SubType>
     </Compile>
