@@ -14,9 +14,9 @@ namespace JustOneProject
             var enumerable = Enumerable.Range(1, 36);
             var @join = string.Join(",", enumerable);
 
-            var bloombergPuzzle = new BloombergPuzzle();
-            var foo = bloombergPuzzle.Foo();
-            Console.WriteLine(foo);
+            //var bloombergPuzzle = new BloombergPuzzle();
+            //var foo = bloombergPuzzle.Foo();
+            //Console.WriteLine(foo);
             var tryAsyncWrapper = new TryAsyncWrapper();
             tryAsyncWrapper.Try();
 
