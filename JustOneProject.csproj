@@ -127,6 +127,10 @@
     <Compile Include="Async\TryAsyncWrapper.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumHelper.cs" />
+    <Compile Include="Functional\Either.cs" />
+    <Compile Include="Functional\EitherExtensions.cs" />
+    <Compile Include="Functional\Option.cs" />
+    <Compile Include="Functional\OptionExtensions.cs" />
     <Compile Include="Presentation\Side.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,6 +138,7 @@
     <Compile Include="VariousStuff\ConcatenatingStrings.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="VariousStuff\FailureExamples.cs" />
     <Compile Include="VariousStuff\GitPatchesGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
