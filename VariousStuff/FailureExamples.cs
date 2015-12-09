@@ -27,7 +27,7 @@ namespace JustOneProject.VariousStuff
 
     public class NetworkFailure
     {
-        HttpStatusCode 
+        //HttpStatusCode 
     }
 
     public class UserBetterResult

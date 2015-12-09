@@ -124,6 +124,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Async\LoggingWrapper.cs" />
     <Compile Include="Async\TryAsyncWrapper.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumHelper.cs" />
@@ -140,6 +141,9 @@
     </Compile>
     <Compile Include="VariousStuff\FailureExamples.cs" />
     <Compile Include="VariousStuff\GitPatchesGenerator.cs" />
+    <Compile Include="VariousStuff\MyResource.cs" />
+    <Compile Include="VariousStuff\UsingCalledThenReturned.cs" />
+    <Compile Include="VariousStuff\UsingWithNullValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
