@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace JustOneProject.VariousStuff
 {
@@ -6,6 +7,8 @@ namespace JustOneProject.VariousStuff
     {
         public IEnumerable<string> GetItemsFromFullSynchronization()
         {
+            return Enumerable.Empty<string>();
+
             // Check current items
             // Download new and changed items
             // Make some diffs on data
