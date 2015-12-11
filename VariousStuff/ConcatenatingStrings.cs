@@ -14,7 +14,7 @@ namespace JustOneProject.VariousStuff
             {
                 sb.Append(name);
             }
-            sd
+            sdkk
             var result = sb.ToString();
 
             // This is better cause of readability
