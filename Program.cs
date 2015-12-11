@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Threading.Tasks;
 using JustOneProject.Async;
 using JustOneProject.VariousStuff;
@@ -18,14 +19,7 @@ namespace JustOneProject
             var usingWithNullValue = new UsingWithNullValue();
             usingWithNullValue.Test();
             new GitPatchesGenerator().GeneratePatches(@"C:\Work\SMT\RL\");
-            BoardTile[,] board;
 
-            board = new BoardTile[5,3];
-            Task.Delay()
-            var length = board.GetLength(0);
-            var length2 = board.GetLength(1);
-
-            
             var enumerable = Enumerable.Range(1, 36);
             var @join = string.Join(",", enumerable);
 
