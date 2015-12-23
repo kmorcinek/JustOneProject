@@ -11,9 +11,19 @@ namespace JustOneProject
     {
         public readonly TimeSpan AnimationDelay = TimeSpan.FromSeconds(5);
 
+        private static double Foo(double b)
+        {
+            double a = 6;
+            double c = a / b;
+
+            return (int)c;
+        }
+
         [STAThread]
         private static void Main()
         {
+            double b = Foo(0.0);
+
             var usingCalledThenReturned = new UsingCalledThenReturned();
             usingCalledThenReturned.Test();
             var usingWithNullValue = new UsingWithNullValue();
