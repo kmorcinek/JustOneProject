@@ -41,6 +41,41 @@ namespace JustOneProject.Refactorings
             }
         }
 
+        public void UploadAllChunksRecursive(IList<byte[]> chunkedData, long uploadId)
+        {
+            foreach (var dataChunk in chunkedData)
+            {
+                UploadChunkRecursive(uploadId, dataChunk, MaximumNumberOfRetries);
+            }
+        }
+
+        private void UploadChunkRecursive(long uploadId, byte[] dataChunk, int retries)
+        {
+            if (retries <= 0)
+            {
+                return;
+            }
+
+            try
+            {
+                bool uploadSuccess = UploadChunk(uploadId, dataChunk);
+
+                if (!uploadSuccess)
+                {
+                    UploadChunkRecursive(uploadId, dataChunk, --retries);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (retries == 1)
+                {
+                    throw new Exception("One of the chunks could not be uploaded.", ex);
+                }
+            }
+
+            UploadChunkRecursive(uploadId, dataChunk, --retries);
+        }
+
         private bool UploadChunk(long uploadId, byte[] dataChunk)
         {
             return false;
