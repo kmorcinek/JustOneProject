@@ -22,6 +22,9 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+            //new AttachingToAction().Foo();
+            new TestAttachingFromOutside().Foo();
+
             double b = Foo(0.0);
 
             var usingCalledThenReturned = new UsingCalledThenReturned();
