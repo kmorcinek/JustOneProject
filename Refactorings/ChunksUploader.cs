@@ -60,9 +60,9 @@ namespace JustOneProject.Refactorings
             {
                 bool uploadSuccess = UploadChunk(uploadId, dataChunk);
 
-                if (!uploadSuccess)
+                if (uploadSuccess)
                 {
-                    UploadChunkRecursive(uploadId, dataChunk, --retries);
+                    return;
                 }
             }
             catch (Exception ex)
