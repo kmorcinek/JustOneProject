@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Threading.Tasks;
 using JustOneProject.Async;
@@ -22,6 +23,7 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+            new GitPatchesGenerator().GeneratePatches(@"C:\Work\SMT\RL\");
             //new AttachingToAction().Foo();
             new TestAttachingFromOutside().Foo();
 

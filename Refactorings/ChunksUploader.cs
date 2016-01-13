@@ -51,10 +51,7 @@ namespace JustOneProject.Refactorings
 
         private void UploadChunkRecursive(long uploadId, byte[] dataChunk, int retries)
         {
-            if (retries <= 0)
-            {
-                return;
-            }
+            Exception anyExceptionOnCommunication = null;
 
             try
             {
@@ -67,10 +64,20 @@ namespace JustOneProject.Refactorings
             }
             catch (Exception ex)
             {
-                if (retries == 1)
+                // log
+                anyExceptionOnCommunication = ex;
+            }
+
+            if (retries <= 0)
+            {
+                const string message = "One of the chunks could not be uploaded.";
+
+                if (anyExceptionOnCommunication != null)
                 {
-                    throw new Exception("One of the chunks could not be uploaded.", ex);
+                    throw new Exception(message, anyExceptionOnCommunication);
                 }
+
+                throw new Exception(message);
             }
 
             UploadChunkRecursive(uploadId, dataChunk, --retries);
