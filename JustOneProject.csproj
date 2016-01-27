@@ -132,6 +132,9 @@
     <Compile Include="Diagnostics\LoggingDiagnostics.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumHelper.cs" />
+    <Compile Include="Extensions\TaskExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Functional\Either.cs" />
     <Compile Include="Functional\EitherExtensions.cs" />
     <Compile Include="Functional\Option.cs" />
