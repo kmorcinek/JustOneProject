@@ -26,7 +26,8 @@ namespace JustOneProject
             //HowWouldItRun.WillRunSynchronously();
             //HowWouldItRun.WillRunAsynchronously();
             //HowWouldItRun.InvokeSynchronousAction();
-            HowWouldItRun.InvokeAsyncActionWillRunAsynchronously();
+            //HowWouldItRun.InvokeAsyncActionWillRunAsynchronously();
+            HowWouldItRun.CheatingMyselfWithAsync();
             
             Console.ReadLine();
 

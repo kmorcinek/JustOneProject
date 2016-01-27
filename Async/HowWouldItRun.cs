@@ -5,6 +5,7 @@ namespace JustOneProject.Async
 {
     public class HowWouldItRun
     {
+        // Timeout is just to show that other operation will complete earlier
         public static void WillRunAsynchronously()
         {
             Task.Run(() =>
@@ -20,6 +21,19 @@ namespace JustOneProject.Async
         public static async Task WillRunSynchronously()
         {
             await Task.Run(() =>
+            {
+                Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking thread
+
+                Log("inside Task.Run");
+            });
+
+            Log("after Task.Run");
+        }
+
+        public static async Task CheatingMyselfWithAsync()
+        {
+            // Actually it will work as Task.Run have an overload with Func<Task> and will handle this 'async' correctly
+            await Task.Run(async () =>
             {
                 Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking thread
 
