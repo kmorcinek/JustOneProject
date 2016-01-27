@@ -20,6 +20,13 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+            //HowWouldItRun.WillRunSynchronously();
+            //HowWouldItRun.WillRunAsynchronously();
+            //HowWouldItRun.InvokeSynchronousAction();
+            HowWouldItRun.InvokeAsyncActionWillRunAsynchronously();
+            
+            Console.ReadLine();
+
             new GitPatchesGenerator().GeneratePatches(@"C:\Work\SMT\RL\");
             //new AttachingToAction().Foo();
             new TestAttachingFromOutside().Foo();

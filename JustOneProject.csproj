@@ -125,6 +125,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Async\HowWouldItRun.cs" />
     <Compile Include="Async\LoggingWrapper.cs" />
     <Compile Include="Async\RedundantTaskRun.cs" />
     <Compile Include="Async\TryAsyncWrapper.cs" />

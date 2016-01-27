@@ -9,7 +9,7 @@ namespace JustOneProject.Async
         {
             Task.Run(() =>
             {
-                Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking Thread
+                Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking thread
 
                 Log("inside Task.Run");
             });
@@ -21,7 +21,7 @@ namespace JustOneProject.Async
         {
             await Task.Run(() =>
             {
-                Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking Thread
+                Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking thread
 
                 Log("inside Task.Run");
             });
@@ -31,14 +31,14 @@ namespace JustOneProject.Async
 
         private static void Log(string message)
         {
-            Log(message);
+            Console.WriteLine(message);
         }
 
-        public static async Task InvokeSynchronousAction()
+        public static void InvokeSynchronousAction()
         {
             RunSynchronouslyInOtherContext(() =>
             {
-                Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking Thread
+                Task.Delay(TimeSpan.FromSeconds(1)).Wait(); // Blocking thread
 
                 Log("inside Task.Run");
             });
@@ -46,11 +46,11 @@ namespace JustOneProject.Async
             Log("after Task.Run");
         }
 
-        public static async Task Invoke()
+        public static void InvokeAsyncActionWillRunAsynchronously()
         {
-            RunSynchronouslyInOtherContext(() =>
+            RunSynchronouslyInOtherContext(async () =>
             {
-                Task.Delay(TimeSpan.FromSeconds(1)).Wait();
+                await Task.Delay(TimeSpan.FromSeconds(1)); // NOT blocking thread
 
                 Log("inside Task.Run");
             });
