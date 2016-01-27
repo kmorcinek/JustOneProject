@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using JustOneProject.Async;
+using JustOneProject.Diagnostics;
 using JustOneProject.VariousStuff;
 
 namespace JustOneProject
@@ -20,6 +21,8 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+            LoggingDiagnostics.LogWithCurrentLocalTime("tesraz");
+            LoggingDiagnostics.LogWithCurrentLocalTimeAndCurrentMethod();
             //HowWouldItRun.WillRunSynchronously();
             //HowWouldItRun.WillRunAsynchronously();
             //HowWouldItRun.InvokeSynchronousAction();

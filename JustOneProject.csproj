@@ -129,6 +129,7 @@
     <Compile Include="Async\LoggingWrapper.cs" />
     <Compile Include="Async\RedundantTaskRun.cs" />
     <Compile Include="Async\TryAsyncWrapper.cs" />
+    <Compile Include="Diagnostics\LoggingDiagnostics.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumHelper.cs" />
     <Compile Include="Functional\Either.cs" />
