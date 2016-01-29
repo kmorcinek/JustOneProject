@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using JustOneProject.Async;
 using JustOneProject.Diagnostics;
@@ -21,6 +23,8 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+            TestMemoryConsumption();
+
             LoggingDiagnostics.LogWithCurrentLocalTime("tesraz");
             LoggingDiagnostics.LogWithCurrentLocalTimeAndCurrentMethod();
             //HowWouldItRun.WillRunSynchronously();
@@ -28,7 +32,7 @@ namespace JustOneProject
             //HowWouldItRun.InvokeSynchronousAction();
             //HowWouldItRun.InvokeAsyncActionWillRunAsynchronously();
             HowWouldItRun.CheatingMyselfWithAsync();
-            
+
             Console.ReadLine();
 
             new GitPatchesGenerator().GeneratePatches(@"C:\Work\SMT\RL\");
@@ -54,6 +58,44 @@ namespace JustOneProject
 
             Console.ReadLine();
 
+        }
+
+        private static void TestMemoryConsumption()
+        {
+            const int length = 1 * 1000 * 1000;
+            var bytes = new byte[length];
+            bytes[9999] = 33;
+
+            for (int i = 0; i < 10; i++)
+            {
+                bytes = Merge(bytes, bytes);
+            }
+        }
+
+        private static byte[] Merge(byte[] data, byte[] bytesToAppend)
+        {
+            if (data == null)
+            {
+                return bytesToAppend;
+            }
+
+            if (bytesToAppend == null)
+            {
+                return data;
+            }
+
+            var newArrayLength = data.Length + bytesToAppend.Length;
+            var message = "Merge: newArrayLength = " + newArrayLength / (1000 * 1000);
+            Debug.WriteLine(message);
+
+            long totalMemory = GC.GetTotalMemory(false) / 1024;
+
+            Debug.WriteLine("Total memory in KB: " + totalMemory);
+
+            byte[] result = new byte[newArrayLength];
+            Array.Copy(data, 0, result, 0, data.Length);
+            Array.Copy(bytesToAppend, 0, result, data.Length, bytesToAppend.Length);
+            return result;
         }
     }
 
