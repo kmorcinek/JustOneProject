@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using JustOneProject.Async;
 using JustOneProject.Diagnostics;
 using JustOneProject.VariousStuff;
@@ -24,7 +25,7 @@ namespace JustOneProject
         private static void Main()
         {
             TestMemoryConsumption();
-
+            return;
             LoggingDiagnostics.LogWithCurrentLocalTime("tesraz");
             LoggingDiagnostics.LogWithCurrentLocalTimeAndCurrentMethod();
             //HowWouldItRun.WillRunSynchronously();
@@ -66,10 +67,21 @@ namespace JustOneProject
             var bytes = new byte[length];
             bytes[9999] = 33;
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 6; i++)
             {
                 bytes = Merge(bytes, bytes);
             }
+            PrintMemoryUsedByGC();
+            Wait();
+            GC.Collect(2, GCCollectionMode.Forced);
+            GC.WaitForFullGCComplete();
+            PrintMemoryUsedByGC();
+            Wait();
+            for (int i = 0; i < 3; i++)
+            {
+                bytes = Merge(bytes, bytes);
+            }
+
         }
 
         private static byte[] Merge(byte[] data, byte[] bytesToAppend)
@@ -88,14 +100,24 @@ namespace JustOneProject
             var message = "Merge: newArrayLength = " + newArrayLength / (1000 * 1000);
             Debug.WriteLine(message);
 
-            long totalMemory = GC.GetTotalMemory(false) / 1024;
-
-            Debug.WriteLine("Total memory in KB: " + totalMemory);
+            PrintMemoryUsedByGC();
 
             byte[] result = new byte[newArrayLength];
             Array.Copy(data, 0, result, 0, data.Length);
             Array.Copy(bytesToAppend, 0, result, data.Length, bytesToAppend.Length);
+            Wait();
             return result;
+        }
+
+        private static void Wait()
+        {
+            Task.Delay(TimeSpan.FromSeconds(2)).Wait();
+        }
+
+        private static void PrintMemoryUsedByGC()
+        {
+            long totalMemory = GC.GetTotalMemory(false)/1024;
+            Debug.WriteLine("Total memory in KB: " + totalMemory);
         }
     }
 
