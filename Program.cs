@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace JustOneProject
     public class Program
     {
         public readonly TimeSpan AnimationDelay = TimeSpan.FromSeconds(5);
+
+        private static MemoryGuard _memoryGuard = new MemoryGuard();
 
         private static double Foo(double b)
         {
@@ -63,23 +66,22 @@ namespace JustOneProject
 
         private static void TestMemoryConsumption()
         {
-            const int length = 1 * 1000 * 1000;
-            var bytes = new byte[length];
-            bytes[9999] = 33;
+            const int length = 64 * 1000 * 1000;
+            var array = new byte[length];
+            array[9999] = 33;
+            var arrayForAdding = new byte[15 * 1000 * 1000];
+            arrayForAdding[9999] = 33;
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 8; i++)
             {
-                bytes = Merge(bytes, bytes);
+                array = Merge(array, arrayForAdding);
             }
-            PrintMemoryUsedByGC();
-            Wait();
-            GC.Collect(2, GCCollectionMode.Forced);
-            GC.WaitForFullGCComplete();
-            PrintMemoryUsedByGC();
-            Wait();
-            for (int i = 0; i < 3; i++)
+
+            arrayForAdding = new byte[15 * 1000 * 1000];
+            
+            for (int i = 0; i < 8 * 2; i++)
             {
-                bytes = Merge(bytes, bytes);
+                array = Merge(array, arrayForAdding);
             }
 
         }
@@ -101,6 +103,7 @@ namespace JustOneProject
             Debug.WriteLine(message);
 
             PrintMemoryUsedByGC();
+            _memoryGuard.UpdateArrayLengthAndCallGcWhenAppropriate(newArrayLength);
 
             byte[] result = new byte[newArrayLength];
             Array.Copy(data, 0, result, 0, data.Length);
@@ -111,12 +114,12 @@ namespace JustOneProject
 
         private static void Wait()
         {
-            Task.Delay(TimeSpan.FromSeconds(2)).Wait();
+            Task.Delay(TimeSpan.FromSeconds(1)).Wait();
         }
 
         private static void PrintMemoryUsedByGC()
         {
-            long totalMemory = GC.GetTotalMemory(false)/1024;
+            long totalMemory = GC.GetTotalMemory(false) / 1024;
             Debug.WriteLine("Total memory in KB: " + totalMemory);
         }
     }
