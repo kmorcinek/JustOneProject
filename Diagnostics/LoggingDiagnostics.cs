@@ -34,5 +34,15 @@ namespace JustOneProject.Diagnostics
         {
             return "Invoking method name is " + invokingMethodName;
         }
+
+        public static void LogElapsedTime(Action action, [CallerMemberName] string invokingMethodName = null)
+        {
+            var stopwatch = Stopwatch.StartNew();
+            action();
+            stopwatch.Stop();
+
+            Debug.WriteLine(FormatInvokingMethodMessage(invokingMethodName));
+            Debug.WriteLine($"Operation took '{stopwatch.ElapsedMilliseconds}' milliseconds");
+        }
     }
 }
