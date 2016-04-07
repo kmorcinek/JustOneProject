@@ -25,9 +25,9 @@ namespace JustOneProject.Extensions
         public static IMappingExpression<TSource, TDestination> MapProperty<TSource, TDestination, TProperty>(
             this IMappingExpression<TSource, TDestination> map,
             Expression<Func<TSource, TProperty>> sourceMember,
-            Expression<Func<TDestination, object>> selector)
+            Expression<Func<TDestination, object>> targetMember)
         {
-            map.ForMember(selector, opt => opt.MapFrom(sourceMember));
+            map.ForMember(targetMember, opt => opt.MapFrom(sourceMember));
 
             return map;
         }
