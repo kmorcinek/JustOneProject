@@ -157,6 +157,7 @@
     <Compile Include="VariousStuff\DoNotUseDefaultParameters.cs" />
     <Compile Include="VariousStuff\DoSmallesWorkInConditionals.cs" />
     <Compile Include="VariousStuff\FailureExamples.cs" />
+    <Compile Include="VariousStuff\FileConcatenator.cs" />
     <Compile Include="VariousStuff\GitPatchesGenerator.cs" />
     <Compile Include="VariousStuff\MemoryGuard.cs" />
     <Compile Include="VariousStuff\MyResource.cs" />
