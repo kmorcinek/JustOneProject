@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using JustOneProject.Async;
 using JustOneProject.Diagnostics;
 using JustOneProject.Helpers;
+using JustOneProject.Tasks;
 using JustOneProject.VariousStuff;
 
 namespace JustOneProject
@@ -26,6 +27,7 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+            RunTaskInParallelWithCancellationToken.Run();
             var computeHash = PathHelper.ComputeHash(@"C:\Users\PLKRMOR\Desktop\Error Handling.txt");
             TestMemoryConsumption();
             return;
