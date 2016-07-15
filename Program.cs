@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using JustOneProject.Async;
 using JustOneProject.Diagnostics;
+using JustOneProject.Helpers;
 using JustOneProject.VariousStuff;
 
 namespace JustOneProject
@@ -27,6 +26,7 @@ namespace JustOneProject
         [STAThread]
         private static void Main()
         {
+            var computeHash = PathHelper.ComputeHash(@"C:\Users\PLKRMOR\Desktop\Error Handling.txt");
             TestMemoryConsumption();
             return;
             LoggingDiagnostics.LogWithCurrentLocalTime("tesraz");
