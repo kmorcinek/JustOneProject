@@ -146,6 +146,9 @@
     <Compile Include="Functional\Option.cs" />
     <Compile Include="Functional\OptionExtensions.cs" />
     <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Marek\DesignParameters.cs" />
+    <Compile Include="Marek\Parameter.cs" />
+    <Compile Include="Marek\Runner.cs" />
     <Compile Include="Presentation\Moving\GuyPlace.cs" />
     <Compile Include="Presentation\Moving\GuyPlace2.cs" />
     <Compile Include="Presentation\Moving\Moving.cs" />
