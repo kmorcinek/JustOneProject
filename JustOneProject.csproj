@@ -178,6 +178,7 @@
     <Compile Include="VariousStuff\ConcatenatingStrings.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="VariousStuff\ConvertDoubleToDecimalProblemTests.cs" />
     <Compile Include="VariousStuff\DoNotUseDefaultParameters.cs" />
     <Compile Include="VariousStuff\DoSmallesWorkInConditionals.cs" />
     <Compile Include="VariousStuff\FailureExamples.cs" />
