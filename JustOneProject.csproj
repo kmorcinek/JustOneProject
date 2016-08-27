@@ -152,11 +152,13 @@
     <Compile Include="Async\TryAsyncWrapper.cs" />
     <Compile Include="Diagnostics\LoggingDiagnostics.cs" />
     <Compile Include="Extensions\AutoMapperExtensions.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\EnumHelper.cs" />
     <Compile Include="Extensions\TaskExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Extensions\Tests\CollectionExtensionsTests.cs" />
     <Compile Include="Functional\Either.cs" />
     <Compile Include="Functional\EitherExtensions.cs" />
     <Compile Include="Functional\Option.cs" />
