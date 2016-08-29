@@ -1,0 +1,18 @@
+﻿using System;
+
+namespace JustOneProject
+{
+    public class Program
+    {
+<<<<<<< HEAD
+        private static MemoryGuard _memoryGuard = new MemoryGuard();
+=======
+        public readonly TimeSpan AnimationDelay = TimeSpan.FromSeconds(5);
+>>>>>>> 345a88e... Move MemoryConsumptionTests to separate class
+
+        [STAThread]
+        private static void Main()
+        {
+        }
+    }
+}

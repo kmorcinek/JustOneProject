@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace JustOneProject.VariousStuff
+namespace JustOneProject.VariousStuff.MemoryConsumption
 {
     public class MemoryGuard
     {

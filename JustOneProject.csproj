@@ -186,7 +186,8 @@
     <Compile Include="VariousStuff\FailureExamples.cs" />
     <Compile Include="VariousStuff\FileConcatenator.cs" />
     <Compile Include="VariousStuff\GitPatchesGenerator.cs" />
-    <Compile Include="VariousStuff\MemoryGuard.cs" />
+    <Compile Include="VariousStuff\MemoryConsumption\MemoryConsumptionTests.cs" />
+    <Compile Include="VariousStuff\MemoryConsumption\MemoryGuard.cs" />
     <Compile Include="VariousStuff\MyResource.cs" />
     <Compile Include="VariousStuff\SynchronizationServiceMock.cs" />
     <Compile Include="VariousStuff\UsingCalledThenReturned.cs" />
