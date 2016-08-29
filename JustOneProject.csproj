@@ -183,9 +183,13 @@
     <Compile Include="VariousStuff\ConvertDoubleToDecimalProblemTests.cs" />
     <Compile Include="VariousStuff\DoNotUseDefaultParameters.cs" />
     <Compile Include="VariousStuff\DoSmallesWorkInConditionals.cs" />
+    <Compile Include="VariousStuff\ExampleEnums\DocumentStatus.cs" />
+    <Compile Include="VariousStuff\ExampleEnums\Example.cs" />
+    <Compile Include="VariousStuff\ExampleEnums\WorseDocumentStatus.cs" />
     <Compile Include="VariousStuff\FailureExamples.cs" />
     <Compile Include="VariousStuff\FileConcatenator.cs" />
     <Compile Include="VariousStuff\GitPatchesGenerator.cs" />
+    <Compile Include="VariousStuff\ExampleEnums\Guards.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryConsumptionTests.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryGuard.cs" />
     <Compile Include="VariousStuff\MyResource.cs" />
