@@ -1,69 +1,17 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
-using JustOneProject.Async;
-using JustOneProject.Diagnostics;
-using JustOneProject.Helpers;
-using JustOneProject.Tasks;
 using JustOneProject.VariousStuff;
 
 namespace JustOneProject
 {
     public class Program
     {
-        public readonly TimeSpan AnimationDelay = TimeSpan.FromSeconds(5);
-
         private static MemoryGuard _memoryGuard = new MemoryGuard();
-
-        private static double Foo(double b)
-        {
-            double a = 6;
-            double c = a / b;
-
-            return (int)c;
-        }
 
         [STAThread]
         private static void Main()
         {
-            RunTaskInParallelWithCancellationToken.Run();
-            var computeHash = PathHelper.ComputeHash(@"C:\Users\PLKRMOR\Desktop\Error Handling.txt");
-            TestMemoryConsumption();
-            return;
-            LoggingDiagnostics.LogWithCurrentLocalTime("tesraz");
-            LoggingDiagnostics.LogWithCurrentLocalTimeAndCurrentMethod();
-            //HowWouldItRun.WillRunSynchronously();
-            //HowWouldItRun.WillRunAsynchronously();
-            //HowWouldItRun.InvokeSynchronousAction();
-            //HowWouldItRun.InvokeAsyncActionWillRunAsynchronously();
-            HowWouldItRun.CheatingMyselfWithAsync();
-
-            Console.ReadLine();
-
-            new GitPatchesGenerator().GeneratePatches(@"C:\Work\SMT\RL\");
-            //new AttachingToAction().Foo();
-            new TestAttachingFromOutside().Foo();
-
-            double b = Foo(0.0);
-
-            var usingCalledThenReturned = new UsingCalledThenReturned();
-            usingCalledThenReturned.Test();
-            var usingWithNullValue = new UsingWithNullValue();
-            usingWithNullValue.Test();
-            new GitPatchesGenerator().GeneratePatches(@"C:\Work\SMT\RL\");
-
-            var enumerable = Enumerable.Range(1, 36);
-            var @join = string.Join(",", enumerable);
-
-            //var bloombergPuzzle = new BloombergPuzzle();
-            //var foo = bloombergPuzzle.Foo();
-            //Console.WriteLine(foo);
-            var tryAsyncWrapper = new TryAsyncWrapper();
-            tryAsyncWrapper.Try();
-
-            Console.ReadLine();
-
         }
 
         private static void TestMemoryConsumption()
@@ -124,13 +72,5 @@ namespace JustOneProject
             long totalMemory = GC.GetTotalMemory(false) / 1024;
             Debug.WriteLine("Total memory in KB: " + totalMemory);
         }
-    }
-
-    public enum BoardTile
-    {
-        Empty = 0,
-        Regular = 1,
-        Fortified = 2,
-        Indestructible = 3
     }
 }
