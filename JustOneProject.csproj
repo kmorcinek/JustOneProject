@@ -196,10 +196,12 @@
     <Compile Include="VariousStuff\ExampleEnums\Guards.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryConsumptionTests.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryGuard.cs" />
+    <Compile Include="VariousStuff\ValueObject\Money.cs" />
     <Compile Include="VariousStuff\MyResource.cs" />
     <Compile Include="VariousStuff\SynchronizationServiceMock.cs" />
     <Compile Include="VariousStuff\UsingCalledThenReturned.cs" />
     <Compile Include="VariousStuff\UsingWithNullValue.cs" />
+    <Compile Include="VariousStuff\ValueObject\MoneyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
