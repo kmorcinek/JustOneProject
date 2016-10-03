@@ -47,13 +47,13 @@ public static class OptionExtensions
     [DebuggerStepThrough]
     public static Option<TResult> SelectMany<TSource, TResult>(this Option<TSource> option, Func<TSource, Option<TResult>> continuation)
     {
-        return OptionExtensions.IfSome<TSource, TResult>(option, continuation);
+        return IfSome<TSource, TResult>(option, continuation);
     }
 
     [EditorBrowsable(EditorBrowsableState.Never)]
     [DebuggerStepThrough]
     public static Option<TResult2> SelectMany<TSource, TResult1, TResult2>(this Option<TSource> source, Func<TSource, Option<TResult1>> continuation, Func<TSource, TResult1, TResult2> projection)
     {
-        return OptionExtensions.IfSome<TSource, TResult2>(source, (Func<TSource, Option<TResult2>>)(x => OptionExtensions.IfSome<TResult1, TResult2>(continuation(x), (Func<TResult1, Option<TResult2>>)(y => new Option<TResult2>(projection(x, y))))));
+        return IfSome<TSource, TResult2>(source, (Func<TSource, Option<TResult2>>)(x => IfSome<TResult1, TResult2>(continuation(x), (Func<TResult1, Option<TResult2>>)(y => new Option<TResult2>(projection(x, y))))));
     }
 }

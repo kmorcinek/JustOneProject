@@ -5,16 +5,17 @@ using System.Diagnostics.CodeAnalysis;
     {
         [SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly Option<T> None = new Option<T>();
-        private readonly T _value;
-        private readonly bool _hasValue;
+
+        readonly T _value;
+        readonly bool _hasValue;
 
         public T Value
         {
             get
             {
-                if (!this._hasValue)
+                if (!_hasValue)
                     throw new InvalidOperationException("Value is not set");
-                return this._value;
+                return _value;
             }
         }
 
@@ -22,28 +23,28 @@ using System.Diagnostics.CodeAnalysis;
         {
             get
             {
-                return this._hasValue;
+                return _hasValue;
             }
         }
 
         public Option(T value)
         {
-            if ((object)value != null)
+            if (value != null)
             {
-                this._value = value;
-                this._hasValue = true;
+                _value = value;
+                _hasValue = true;
             }
             else
             {
-                this._value = default(T);
-                this._hasValue = false;
+                _value = default(T);
+                _hasValue = false;
             }
         }
 
         public static implicit operator Option<T>(T value)
         {
-            if ((object)value == null)
-                return Option<T>.None;
+            if (value == null)
+                return None;
             return new Option<T>(value);
         }
 
@@ -59,43 +60,43 @@ using System.Diagnostics.CodeAnalysis;
 
         public override int GetHashCode()
         {
-            if (this._hasValue)
-                return this.Value.GetHashCode();
+            if (_hasValue)
+                return Value.GetHashCode();
             return base.GetHashCode();
         }
 
         public override bool Equals(object obj)
         {
             if (obj is Option<T>)
-                return this.Equals((Option<T>)obj);
+                return Equals((Option<T>)obj);
             return false;
         }
 
         public bool Equals(Option<T> other)
         {
-            if (!this.HasValue && !other.HasValue)
+            if (!HasValue && !other.HasValue)
                 return true;
-            if (this.HasValue && other.HasValue)
-                return this._value.Equals((object)other.Value);
+            if (HasValue && other.HasValue)
+                return _value.Equals(other.Value);
             return false;
         }
 
         bool IEquatable<Option<T>>.Equals(Option<T> other)
         {
-            return this.Equals(other);
+            return Equals(other);
         }
 
         public T GetValueOrDefault(T @default)
         {
-            if (!this.HasValue)
+            if (!HasValue)
                 return @default;
-            return this._value;
+            return _value;
         }
 
         public T GetValueOrDefault()
         {
-            if (!this.HasValue)
+            if (!HasValue)
                 return default(T);
-            return this._value;
+            return _value;
         }
     }

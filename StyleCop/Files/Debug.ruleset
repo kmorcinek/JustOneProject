@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfRule xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Rule Id="SA1009" Action="None" />
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SA1111" Action="None" />
+    <Rule Id="SA1122" Action="None" />
+    <Rule Id="SA1200" Action="None" />
+    <Rule Id="SA1201" Action="None" />
+    <Rule Id="SA1202" Action="None" />
+    <Rule Id="SA1204" Action="None" />
+    <Rule Id="SA1300" Action="None" />
+    <Rule Id="SA1309" Action="None" />
+    <Rule Id="SA1310" Action="None" />
+    <Rule Id="SA1313" Action="None" />
+    <Rule Id="SA1400" Action="None" />
+    <Rule Id="SA1407" Action="None" />
+    <Rule Id="SA1516" Action="None" />
+    <Rule Id="SA1611" Action="None" />
+    <Rule Id="SA1614" Action="None" />
+    <Rule Id="SA1615" Action="None" />
+    <Rule Id="SA1618" Action="None" />
+    <Rule Id="SA1623" Action="None" />
+    <Rule Id="SA1633" Action="None" />
+    <Rule Id="SA1652" Action="None" />
+</ArrayOfRule>

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JustOneProject</RootNamespace>
     <AssemblyName>JustOneProject</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>JustOneProject.Program</StartupObject>
     <FileUpgradeFlags>
@@ -45,7 +45,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -109,13 +109,24 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=4.19.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>packages\FluentAssertions.4.19.2\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.19.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>packages\FluentAssertions.4.19.2\lib\net45\FluentAssertions.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -123,7 +134,9 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -133,20 +146,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.assert.2.1.0\lib\dotnet\xunit.assert.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="xunit.assert, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>packages\xunit.assert.2.2.0\lib\netstandard1.1\xunit.assert.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.core, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.extensibility.core.2.1.0\lib\dotnet\xunit.core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="xunit.core, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>packages\xunit.extensibility.core.2.2.0\lib\netstandard1.1\xunit.core.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.execution.desktop, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.extensibility.execution.2.1.0\lib\net45\xunit.execution.desktop.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="xunit.execution.desktop, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +163,8 @@
     <Compile Include="Async\LoggingWrapper.cs" />
     <Compile Include="Async\RedundantTaskRun.cs" />
     <Compile Include="Async\TryAsyncWrapper.cs" />
+    <Compile Include="DryRule\Tip1.cs" />
+    <Compile Include="IoC\Service.cs" />
     <Compile Include="Diagnostics\LoggingDiagnostics.cs" />
     <Compile Include="Extensions\AutoMapperExtensions.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
@@ -178,8 +189,24 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Refactorings\ChunksUploader.cs" />
+    <Compile Include="StyleCop\RewriteRuleset.cs" />
+    <Compile Include="StyleCop\RewriteRulesetTests.cs" />
+    <Compile Include="StyleCop\Rule.cs" />
     <Compile Include="Tasks\RunTaskInParallelWithCancellationToken.cs" />
+    <Compile Include="TsImportsGenerator\AddImports.cs" />
+    <Compile Include="TsImportsGenerator\FileThatIsMissingImports.cs" />
+    <Compile Include="TsImportsGenerator\FileToImport.cs" />
+    <Compile Include="TsImportsGenerator\IdentifiersParser.cs" />
+    <Compile Include="TsImportsGenerator\RelativePathCreator.cs" />
+    <Compile Include="TsImportsGenerator\RetrieveClassName.cs" />
+    <Compile Include="TsImportsGenerator\Tests\AddImportsTests.cs" />
+    <Compile Include="TsImportsGenerator\Tests\IdentifiersParserTests.cs" />
+    <Compile Include="TsImportsGenerator\Tests\Integration\ManagerTests.cs" />
+    <Compile Include="TsImportsGenerator\Tests\RelativePathCreatorTests.cs" />
+    <Compile Include="TsImportsGenerator\Tests\RetrieveClassNameTests.cs" />
+    <Compile Include="TsImportsGenerator\TsImportsGeneratorRunner.cs" />
     <Compile Include="VariousStuff\AttachingToAction.cs" />
+    <Compile Include="VariousStuff\BaseAndDeriving.cs" />
     <Compile Include="VariousStuff\CastingWithException.cs" />
     <Compile Include="VariousStuff\ConcatenatingStrings.cs">
       <SubType>Code</SubType>
@@ -189,9 +216,12 @@
     <Compile Include="VariousStuff\DoSmallesWorkInConditionals.cs" />
     <Compile Include="VariousStuff\ExampleEnums\DocumentStatus.cs" />
     <Compile Include="VariousStuff\ExampleEnums\Example.cs" />
+    <Compile Include="VariousStuff\ExampleEnums\Unit.cs" />
+    <Compile Include="VariousStuff\ExampleEnums\UnitConverter.cs" />
     <Compile Include="VariousStuff\ExampleEnums\WorseDocumentStatus.cs" />
     <Compile Include="VariousStuff\FailureExamples.cs" />
     <Compile Include="VariousStuff\FileConcatenator.cs" />
+    <Compile Include="VariousStuff\GenerateCalculations.cs" />
     <Compile Include="VariousStuff\GitPatchesGenerator.cs" />
     <Compile Include="VariousStuff\ExampleEnums\Guards.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryConsumptionTests.cs" />
@@ -206,6 +236,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="StyleCop\Files\Debug.ruleset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="StyleCop\Files\Release.ruleset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -225,6 +261,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="JustOneProject.MasterCoder\MasterCoder\MasterCoder.csproj">
+      <Project>{5f296271-ef25-4f59-96c7-b5dda19a8421}</Project>
+      <Name>MasterCoder</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

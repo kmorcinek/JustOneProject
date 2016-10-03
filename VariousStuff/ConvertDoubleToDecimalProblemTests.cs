@@ -5,6 +5,7 @@ namespace JustOneProject.VariousStuff
     public class ConvertDoubleToDecimalProblemTests
     {
         [Theory]
+        [Trait("Category", "DoNotRun")]
         [InlineData(1.3)]
         [InlineData(double.MinValue)]
         [InlineData(double.MaxValue)]
@@ -14,6 +15,7 @@ namespace JustOneProject.VariousStuff
         }
 
         [Fact]
+        [Trait("Category", "DoNotRun")]
         public void Test()
         {
             double value = 0.000001d;

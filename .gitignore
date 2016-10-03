@@ -13,7 +13,7 @@
 [Dd]ebug/
 [Rr]elease/
 x64/
-build/
+#build/
 [Bb]in/
 [Oo]bj/
 
@@ -187,6 +187,22 @@ $RECYCLE.BIN/
 
 # Visual Studio temp something
 .vs/
+
+# VS 2015+
+*.vc.vc.opendb
+*.vc.db
+
+# Rider
+.idea/
+
+# Output folder used by Webpack or other FE stuff
+**/node_modules/*
+**/wwwroot/*
+
+# SpecFlow specific
+*.feature.cs
+*.feature.xlsx.*
+*.Specs_*.html
 
 #####
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
