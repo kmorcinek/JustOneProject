@@ -25,7 +25,9 @@ namespace KMorcinek.SpecFlowExample
         public void WhenICalculateMultiplication()
         {
             int input = _context.Get<int>(CommonInputSteps.InputValueInKey);
+
             int result = input * 2;
+
             _context.Set(result, ResultOutKey);
         }
         
