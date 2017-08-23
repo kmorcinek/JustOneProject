@@ -6,8 +6,8 @@ namespace KMorcinek.SpecFlowExample
     [Binding]
     public class SpecFlowExampleSteps
     {
-        public const string InputValueInKey = "inputValueIn";
         public const string ResultOutKey = "resultOut";
+
         readonly ScenarioContext _context;
 
         public SpecFlowExampleSteps(ScenarioContext context)
@@ -21,16 +21,10 @@ namespace KMorcinek.SpecFlowExample
             //ScenarioContext.Current.Pending();
         }
         
-        [Given(@"Use (.*) as a input value")]
-        public void GivenUseAsAInputValue(int p0)
-        {
-            _context.Set(p0, InputValueInKey);
-        }
-        
         [When(@"I calculate multiplication")]
         public void WhenICalculateMultiplication()
         {
-            int input = _context.Get<int>(InputValueInKey);
+            int input = _context.Get<int>(CommonInputSteps.InputValueInKey);
             int result = input * 2;
             _context.Set(result, ResultOutKey);
         }
@@ -38,7 +32,7 @@ namespace KMorcinek.SpecFlowExample
         [Then(@"Output Multiplication is (.*)")]
         public void ThenOutputMultiplicationIs(int p0)
         {
-            _context.Get<int>(ResultOutKey).Should().Be(p0)
+            _context.Get<int>(ResultOutKey).Should().Be(p0);
         }
     }
 }
