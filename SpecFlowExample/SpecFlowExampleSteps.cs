@@ -6,8 +6,6 @@ namespace KMorcinek.SpecFlowExample
     [Binding]
     public class SpecFlowExampleSteps
     {
-        public const string ResultOutKey = "resultOut";
-
         readonly ScenarioContext _context;
 
         public SpecFlowExampleSteps(ScenarioContext context)
@@ -28,13 +26,7 @@ namespace KMorcinek.SpecFlowExample
 
             int result = input * 2;
 
-            _context.Set(result, ResultOutKey);
-        }
-        
-        [Then(@"Output Multiplication is (.*)")]
-        public void ThenOutputMultiplicationIs(int p0)
-        {
-            _context.Get<int>(ResultOutKey).Should().Be(p0);
+            _context.Set(result, CommonOutputSteps.ResultOutKey);
         }
     }
 }
