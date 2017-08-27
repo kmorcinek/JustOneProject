@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using KMorcinek.SpecFlowExample.Extensions;
 using TechTalk.SpecFlow;
 
 namespace KMorcinek.SpecFlowExample
@@ -6,7 +7,7 @@ namespace KMorcinek.SpecFlowExample
     [Binding]
     public class CommonOutputSteps
     {
-        public const string ResultOutKey = "resultOut";
+        public static readonly NameWithType<int> ResultOutKey = new NameWithType<int>("resultOut");
 
         readonly ScenarioContext _context;
 
@@ -18,7 +19,7 @@ namespace KMorcinek.SpecFlowExample
         [Then(@"Result is (.*)")]
         public void ThenResultIs(int result)
         {
-            _context.Get<int>(ResultOutKey).Should().Be(result);
+            _context.GetEx(ResultOutKey).Should().Be(result);
         }
     }
 }

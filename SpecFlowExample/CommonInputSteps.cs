@@ -6,7 +6,7 @@ namespace KMorcinek.SpecFlowExample
     [Binding]
     public class CommonInputSteps
     {
-        public readonly NameWithType<int> InputValueInKey = new NameWithType<int>("inputValueIn");
+        public static readonly NameWithType<int> InputValueInKey = new NameWithType<int>("inputValueIn");
 
         readonly ScenarioContext _context;
 
@@ -18,7 +18,7 @@ namespace KMorcinek.SpecFlowExample
         [Given(@"Use (.*) as a input value")]
         public void GivenUseAsAInputValue(int p0)
         {
-            _context.Set(p0, InputValueInKey);
+            _context.SetEx(InputValueInKey, p0);
         }
     }
 }

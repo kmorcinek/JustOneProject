@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using KMorcinek.SpecFlowExample.Extensions;
 using TechTalk.SpecFlow;
 
 namespace KMorcinek.SpecFlowExample
@@ -16,11 +17,11 @@ namespace KMorcinek.SpecFlowExample
         [When(@"I calculate addition")]
         public void WhenICalculateAddition()
         {
-            int input = _context.Get<int>(CommonInputSteps.InputValueInKey);
+            int input = _context.GetEx(CommonInputSteps.InputValueInKey);
 
             int result = input + 7;
 
-            _context.Set(result, CommonOutputSteps.ResultOutKey);
+            _context.SetEx(CommonOutputSteps.ResultOutKey, result);
         }
     }
 }
