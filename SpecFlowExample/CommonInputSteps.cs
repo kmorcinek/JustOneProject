@@ -1,11 +1,12 @@
-﻿using TechTalk.SpecFlow;
+﻿using KMorcinek.SpecFlowExample.Extensions;
+using TechTalk.SpecFlow;
 
 namespace KMorcinek.SpecFlowExample
 {
     [Binding]
     public class CommonInputSteps
     {
-        public const string InputValueInKey = "inputValueIn";
+        public readonly NameWithType<int> InputValueInKey = new NameWithType<int>("inputValueIn");
 
         readonly ScenarioContext _context;
 
