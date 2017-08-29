@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using JustOneProject.AutoFixtureExamples;
 using JustOneProject.IoC;
 using JustOneProject.StyleCop;
 using JustOneProject.TsImportsGenerator;
@@ -17,6 +18,9 @@ namespace JustOneProject
 
         static void Main()
         {
+            AutoFixtureRunner.Run();
+            return;
+
             RewriteRulesetTests.Test();
             return;
 
