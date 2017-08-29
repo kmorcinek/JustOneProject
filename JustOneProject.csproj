@@ -129,6 +129,9 @@
       <HintPath>packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ploeh.AutoFixture, Version=3.50.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>packages\AutoFixture.3.50.6\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -163,6 +166,8 @@
     <Compile Include="Async\LoggingWrapper.cs" />
     <Compile Include="Async\RedundantTaskRun.cs" />
     <Compile Include="Async\TryAsyncWrapper.cs" />
+    <Compile Include="AutoFixtureExamples\AutoFixtureRunner.cs" />
+    <Compile Include="AutoFixtureExamples\ImmutableExample.cs" />
     <Compile Include="DryRule\Tip1.cs" />
     <Compile Include="IoC\Service.cs" />
     <Compile Include="Diagnostics\LoggingDiagnostics.cs" />
