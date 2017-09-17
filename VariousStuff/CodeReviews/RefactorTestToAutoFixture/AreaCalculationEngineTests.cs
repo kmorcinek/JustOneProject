@@ -15,6 +15,8 @@ namespace JustOneProject.VariousStuff.CodeReviews.RefactorTestToAutoFixture
             double motorWidth = fixture.Create<double>();
             double lengthReturnedByLengthEngine = fixture.Create<double>();
 
+            double expectedResult = motorWidth * lengthReturnedByLengthEngine;
+
             var lengthEngine = new Mock<ILengthEngine>();
             lengthEngine
                 .Setup(engine => engine.CalculateLength(It.IsAny<double>(), It.IsAny<double>()))
@@ -24,7 +26,7 @@ namespace JustOneProject.VariousStuff.CodeReviews.RefactorTestToAutoFixture
 
             double area = sut.CalculateArea(motorWidth, fixture.Create<double>(), fixture.Create<double>());
 
-            area.Should().Be(motorWidth * lengthReturnedByLengthEngine);
+            area.Should().Be(expectedResult);
         }
     }
 }
