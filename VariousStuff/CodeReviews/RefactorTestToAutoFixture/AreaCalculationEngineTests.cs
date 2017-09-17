@@ -25,7 +25,6 @@ namespace JustOneProject.VariousStuff.CodeReviews.RefactorTestToAutoFixture
             double area = sut.CalculateArea(motorWidth, fixture.Create<double>(), fixture.Create<double>());
 
             area.Should().Be(motorWidth * lengthReturnedByLengthEngine);
-            lengthEngine.Verify(engine => engine.CalculateLength(It.IsAny<double>(), It.IsAny<double>()), Times.Once);
         }
     }
 }
