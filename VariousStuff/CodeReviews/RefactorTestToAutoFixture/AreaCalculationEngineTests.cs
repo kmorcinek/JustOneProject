@@ -1,26 +1,27 @@
 ﻿using FluentAssertions;
 using Moq;
 using Ploeh.AutoFixture;
+using Ploeh.AutoFixture.Xunit2;
 using Xunit;
 
 namespace JustOneProject.VariousStuff.CodeReviews.RefactorTestToAutoFixture
 {
     public class AreaCalculationEngineTests
     {
-        [Fact]
-        public void CalculateArea_works()
+        [Theory]
+        [AutoData]
+        public void CalculateArea_works(
+            double motorWidth,
+            double returnedByLengthEngine)
         {
             var fixture = new Fixture();
 
-            double motorWidth = fixture.Create<double>();
-            double lengthReturnedByLengthEngine = fixture.Create<double>();
-
-            double expectedResult = motorWidth * lengthReturnedByLengthEngine;
+            double expectedResult = motorWidth * returnedByLengthEngine;
 
             var lengthEngine = new Mock<ILengthEngine>();
             lengthEngine
                 .Setup(engine => engine.CalculateLength(It.IsAny<double>(), It.IsAny<double>()))
-                .Returns(lengthReturnedByLengthEngine);
+                .Returns(returnedByLengthEngine);
 
             var sut = new AreaCalculationEngine(lengthEngine.Object);
 
