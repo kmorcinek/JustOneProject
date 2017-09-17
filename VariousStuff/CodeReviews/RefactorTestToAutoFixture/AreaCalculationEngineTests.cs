@@ -12,18 +12,19 @@ namespace JustOneProject.VariousStuff.CodeReviews.RefactorTestToAutoFixture
         {
             var fixture = new Fixture();
 
-            double motorWidth = 250;
+            double motorWidth = fixture.Create<double>();
+            double lengthReturnedByLengthEngine = fixture.Create<double>();
 
             var lengthEngine = new Mock<ILengthEngine>();
             lengthEngine
                 .Setup(engine => engine.CalculateLength(It.IsAny<double>(), It.IsAny<double>()))
-                .Returns(1110);
+                .Returns(lengthReturnedByLengthEngine);
 
             var sut = new AreaCalculationEngine(lengthEngine.Object);
 
             double area = sut.CalculateArea(motorWidth, fixture.Create<double>(), fixture.Create<double>());
 
-            area.Should().Be(277500);
+            area.Should().Be(motorWidth * lengthReturnedByLengthEngine);
             lengthEngine.Verify(engine => engine.CalculateLength(It.IsAny<double>(), It.IsAny<double>()), Times.Once);
         }
     }
