@@ -237,6 +237,7 @@
     <Compile Include="VariousStuff\ExampleEnums\Unit.cs" />
     <Compile Include="VariousStuff\ExampleEnums\UnitConverter.cs" />
     <Compile Include="VariousStuff\ExampleEnums\WorseDocumentStatus.cs" />
+    <Compile Include="VariousStuff\ExpressionTrees\Example.cs" />
     <Compile Include="VariousStuff\FailureExamples.cs" />
     <Compile Include="VariousStuff\FileConcatenator.cs" />
     <Compile Include="VariousStuff\GenerateCalculations.cs" />
