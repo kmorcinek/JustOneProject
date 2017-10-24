@@ -9,9 +9,9 @@ namespace JustOneProject.ConventionTests
         {
             string className = GetClassName(content);
 
-            throw new NotImplementedException(className);
-
             string constructorCode = GetConstructorCode(content, className);
+
+            //throw new NotImplementedException(constructorCode);
 
             return constructorCode.Contains("IEnumerable")
                    || constructorCode.Contains("[]");
@@ -20,13 +20,20 @@ namespace JustOneProject.ConventionTests
         static string GetClassName(string content)
         {
             var regex = new Regex(@"class\s+(\w+)");
-            var match = regex.Match(content);
+
+            Match match = regex.Match(content);
+
             return match.Groups[1].Value;
         }
 
         static string GetConstructorCode(string content, string className)
         {
-            throw new System.NotImplementedException();
+            // TODO: the last ) should be lazy (smallest string possible)
+            var regex = new Regex($@"\s+BadClass\s*\((.*\))");
+
+            Match match = regex.Match(content);
+
+            return match.Groups[1].Value;
         }
     }
 }
