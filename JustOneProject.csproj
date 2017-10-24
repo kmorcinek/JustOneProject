@@ -269,6 +269,8 @@
     <Compile Include="AutoFixtureExamples\ExampleTest.cs" />
     <Compile Include="AutoFixtureExamples\ImmutableExample.cs" />
     <Compile Include="ConventionTests\AllowOnlyReadOnlyCollectionInConstructors.cs" />
+    <Compile Include="ConventionTests\RunningConventionTests\AllowOnlyReadOnlyCollectionInConstructorsTests.cs" />
+    <Compile Include="ConventionTests\RunningConventionTests\FilesRetriever.cs" />
     <Compile Include="ConventionTests\Tests\FirstTest.cs" />
     <Compile Include="ConventionTests\Tests\TestFiles\BadClass.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

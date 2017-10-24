@@ -3,6 +3,8 @@ using System.Text.RegularExpressions;
 
 namespace JustOneProject.ConventionTests
 {
+    // This is not production code so I am using Regular Expression (hard to read).
+    // TODO: works only if there is one class in the file
     public class AllowOnlyReadOnlyCollectionInConstructors
     {
         public bool IsViolation(string content)
