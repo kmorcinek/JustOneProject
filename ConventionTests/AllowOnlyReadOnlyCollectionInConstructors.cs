@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace JustOneProject.ConventionTests
 {
@@ -9,33 +8,53 @@ namespace JustOneProject.ConventionTests
     {
         public bool IsViolation(string content)
         {
-            string className = GetClassName(content);
+            Option<string> className = GetClassName(content);
 
-            string constructorCode = GetConstructorCode(content, className);
+            if (className.HasValue == false)
+            {
+                return false;
+            }
+
+            Option<string> constructorCode = GetConstructorCode(content, className.Value);
+
+            if (constructorCode.HasValue == false)
+            {
+                return false;
+            }
 
             //throw new NotImplementedException(constructorCode);
 
-            return constructorCode.Contains("IEnumerable")
-                   || constructorCode.Contains("[]");
+            return constructorCode.Value.Contains("IEnumerable")
+                   || constructorCode.Value.Contains("[]");
         }
 
-        static string GetClassName(string content)
+        static Option<string> GetClassName(string content)
         {
             var regex = new Regex(@"class\s+(\w+)");
 
             Match match = regex.Match(content);
 
-            return match.Groups[1].Value;
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+
+            return Option<string>.None;
         }
 
-        static string GetConstructorCode(string content, string className)
+        static Option<string> GetConstructorCode(string content, string className)
         {
             // TODO: the last ) should be lazy (smallest string possible)
             var regex = new Regex($@"\s+BadClass\s*\((.*\))");
 
             Match match = regex.Match(content);
 
-            return match.Groups[1].Value;
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+
+            return Option<string>.None;
         }
     }
 }
