@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using FluentAssertions;
 using JustOneProject.ConventionTests.Tests;
 using Xunit;
 
@@ -13,6 +15,13 @@ namespace JustOneProject.ConventionTests.RunningConventionTests
         {
             IEnumerable<string> files = FilesRetriever.GetFiles(FirstTest.ConventionTestFiles);
 
+            string[] classes = GetViolatingClasses(files).ToArray();
+
+            Assert.False(classes.Any(), $"Classes violating {nameof(AllowOnlyReadOnlyCollectionInConstructors)}: '{string.Join(", ", classes)}'");
+        }
+
+        static IEnumerable<string> GetViolatingClasses(IEnumerable<string> files)
+        {
             foreach (var pathToFile in files)
             {
                 //Console.WriteLine(pathToFile);
@@ -21,6 +30,7 @@ namespace JustOneProject.ConventionTests.RunningConventionTests
 
                 if (new AllowOnlyReadOnlyCollectionInConstructors().IsViolation(content))
                 {
+                    yield return AllowOnlyReadOnlyCollectionInConstructors.GetClassName(content).Value;
                 }
             }
         }

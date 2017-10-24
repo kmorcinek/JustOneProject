@@ -28,7 +28,7 @@ namespace JustOneProject.ConventionTests
                    || constructorCode.Value.Contains("[]");
         }
 
-        static Option<string> GetClassName(string content)
+        public static Option<string> GetClassName(string content)
         {
             var regex = new Regex(@"class\s+(\w+)");
 
