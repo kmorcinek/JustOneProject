@@ -1,10 +1,15 @@
-﻿namespace JustOneProject.ConventionTests
+﻿using System;
+using System.Text.RegularExpressions;
+
+namespace JustOneProject.ConventionTests
 {
     public class AllowOnlyReadOnlyCollectionInConstructors
     {
         public bool IsViolation(string content)
         {
             string className = GetClassName(content);
+
+            throw new NotImplementedException(className);
 
             string constructorCode = GetConstructorCode(content, className);
 
@@ -14,7 +19,9 @@
 
         static string GetClassName(string content)
         {
-            throw new System.NotImplementedException();
+            var regex = new Regex(@"class\s+(\w+)");
+            var match = regex.Match(content);
+            return match.Groups[1].Value;
         }
 
         static string GetConstructorCode(string content, string className)
