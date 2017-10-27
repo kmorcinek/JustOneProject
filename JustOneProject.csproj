@@ -275,6 +275,9 @@
     <Compile Include="ConventionTests\Tests\TestFiles\BadClass.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <None Include="ConventionTests\Tests\TestFiles\ButtLapCore.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="DryRule\Tip1.cs" />
     <Compile Include="IoC\Service.cs" />
     <Compile Include="Diagnostics\LoggingDiagnostics.cs" />
