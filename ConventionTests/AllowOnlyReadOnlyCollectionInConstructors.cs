@@ -45,7 +45,7 @@ namespace JustOneProject.ConventionTests
         static Option<string> GetConstructorCode(string content, string className)
         {
             // TODO: the last ) should be lazy (smallest string possible)
-            var regex = new Regex($@"\s+BadClass\s*\((.*\))");
+            var regex = new Regex($@"\s+{className}\s*\((.*\))");
 
             Match match = regex.Match(content);
 
