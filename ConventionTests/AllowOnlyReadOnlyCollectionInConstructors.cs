@@ -10,19 +10,12 @@ namespace JustOneProject.ConventionTests
         {
             Option<string> className = GetClassName(content);
 
-            if (className.HasValue == false)
-            {
-                return false;
-            }
-
-            Option<string> constructorCode = GetConstructorCode(content, className.Value);
+            Option<string> constructorCode = className.IfSome(x => GetConstructorCode(content, x));
 
             if (constructorCode.HasValue == false)
             {
                 return false;
             }
-
-            //throw new NotImplementedException(constructorCode);
 
             return constructorCode.Value.Contains("IEnumerable")
                    || constructorCode.Value.Contains("[]");
