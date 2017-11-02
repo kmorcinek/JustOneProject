@@ -12,7 +12,7 @@
     <AssemblyName>JustOneProject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>JustOneProject.Program</StartupObject>
+    <StartupObject>JustOneProject.VariousStuff.Casting.CastingTest</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -324,6 +324,9 @@
     <Compile Include="VariousStuff\BaseAndDeriving.cs" />
     <Compile Include="VariousStuff\Benchmark\Md5VsSha256.cs" />
     <Compile Include="VariousStuff\CastingWithException.cs" />
+    <Compile Include="VariousStuff\Casting\CastingTest.cs" />
+    <Compile Include="VariousStuff\Casting\IMyInterface.cs" />
+    <Compile Include="VariousStuff\Casting\MyDictionary.cs" />
     <Compile Include="VariousStuff\CodeReviews\RefactorTestToAutoFixture\AreaCalculationEngine.cs" />
     <Compile Include="VariousStuff\CodeReviews\RefactorTestToAutoFixture\ILengthEngine.cs" />
     <Compile Include="VariousStuff\CodeReviews\RefactorTestToAutoFixture\AreaCalculationEngineTests.cs" />
