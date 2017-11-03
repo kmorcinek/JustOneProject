@@ -321,6 +321,7 @@
     <Compile Include="TsImportsGenerator\Tests\RetrieveClassNameTests.cs" />
     <Compile Include="TsImportsGenerator\TsImportsGeneratorRunner.cs" />
     <Compile Include="VariousStuff\AttachingToAction.cs" />
+    <Compile Include="VariousStuff\AutoFixture\NewAutofixtureInstanceTest.cs" />
     <Compile Include="VariousStuff\BaseAndDeriving.cs" />
     <Compile Include="VariousStuff\Benchmark\Md5VsSha256.cs" />
     <Compile Include="VariousStuff\CastingWithException.cs" />
