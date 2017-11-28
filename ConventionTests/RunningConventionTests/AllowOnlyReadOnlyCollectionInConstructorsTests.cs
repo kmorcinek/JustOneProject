@@ -28,7 +28,7 @@ namespace JustOneProject.ConventionTests.RunningConventionTests
 
                 if (new AllowOnlyReadOnlyCollectionInConstructors().IsViolation(content))
                 {
-                    yield return AllowOnlyReadOnlyCollectionInConstructors.GetClassName(content).Value;
+                    yield return AllowOnlyReadOnlyCollectionInConstructors.GetClassName(content);
                 }
             }
         }

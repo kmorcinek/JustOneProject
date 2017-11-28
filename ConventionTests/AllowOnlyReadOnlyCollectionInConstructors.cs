@@ -3,25 +3,29 @@
 namespace JustOneProject.ConventionTests
 {
     // This is not production code so I am using Regular Expression (hard to read).
-    // TODO: works only if there is one class in the file
     public class AllowOnlyReadOnlyCollectionInConstructors
     {
         public bool IsViolation(string content)
         {
-            Option<string> className = GetClassName(content);
+            string className = GetClassName(content);
 
-            Option<string> constructorCode = className.IfSome(x => GetConstructorCode(content, x));
-
-            if (constructorCode.HasValue == false)
+            if (className == null)
             {
                 return false;
             }
 
-            return constructorCode.Value.Contains("IEnumerable")
-                   || constructorCode.Value.Contains("[]");
+            string constructorCode = GetConstructorParametersCode(content, className);
+
+            if (constructorCode == null)
+            {
+                return false;
+            }
+
+            return constructorCode.Contains("IEnumerable")
+                   || constructorCode.Contains("[]");
         }
 
-        public static Option<string> GetClassName(string content)
+        public static string GetClassName(string content)
         {
             var regex = new Regex(@"class\s+(\w+)");
 
@@ -32,12 +36,11 @@ namespace JustOneProject.ConventionTests
                 return match.Groups[1].Value;
             }
 
-            return Option<string>.None;
+            return null;
         }
 
-        static Option<string> GetConstructorCode(string content, string className)
+        static string GetConstructorParametersCode(string content, string className)
         {
-            // TODO: the last ) should be lazy (smallest string possible)
             var regex = new Regex($@"\s+{className}\s*\((.*\))");
 
             Match match = regex.Match(content);
@@ -47,7 +50,7 @@ namespace JustOneProject.ConventionTests
                 return match.Groups[1].Value;
             }
 
-            return Option<string>.None;
+            return null;
         }
     }
 }
