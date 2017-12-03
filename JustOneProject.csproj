@@ -304,6 +304,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Refactorings\ChunksUploader.cs" />
+    <Compile Include="Registration\CustomerBlue.cs" />
+    <Compile Include="Registration\CustomerGreen.cs" />
+    <Compile Include="Registration\Features\FeatureRain.cs" />
     <Compile Include="StyleCop\RewriteRuleset.cs" />
     <Compile Include="StyleCop\RewriteRulesetTests.cs" />
     <Compile Include="StyleCop\Rule.cs" />
