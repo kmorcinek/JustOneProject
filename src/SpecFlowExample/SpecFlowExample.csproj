@@ -72,7 +72,7 @@
     <Compile Include="AdditionTestsSteps.cs" />
     <Compile Include="CommonInputSteps.cs" />
     <Compile Include="CommonOutputSteps.cs" />
-    <Compile Include="Extensions\ContextScenarionExtensions.cs" />
+    <Compile Include="Extensions\ScenarioContextExtensions.cs" />
     <Compile Include="Extensions\NameWithType.cs" />
     <Compile Include="Millimetre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

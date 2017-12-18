@@ -2,7 +2,7 @@
 
 namespace KMorcinek.SpecFlowExample.Extensions
 {
-    public static class ContextScenarionExtensions
+    public static class ScenarioContextExtensions
     {
         public static T GetEx<T>(this ScenarioContext scenarioContext, NameWithType<T> nameWithType)
         {
