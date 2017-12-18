@@ -351,6 +351,7 @@
     <Compile Include="VariousStuff\GenerateCalculations.cs" />
     <Compile Include="VariousStuff\GitPatchesGenerator.cs" />
     <Compile Include="VariousStuff\ExampleEnums\Guards.cs" />
+    <Compile Include="VariousStuff\SettingsLogger.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryConsumptionTests.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryGuard.cs" />
     <Compile Include="VariousStuff\ValueObject\Money.cs" />
