@@ -17,7 +17,9 @@ namespace KMorcinek.SpecFlowExample
         [Given(@"Please purchase at http://www\.specflow\.org/plus to remove this scenario\.")]
         public void GivenPleasePurchaseAtHttpWww_Specflow_OrgPlusToRemoveThisScenario_()
         {
-            //ScenarioContext.Current.Pending();
+            var fluxDensity = _context.GetEx(CommonInputSteps.FluxDensity);
+
+            var coreDiameter = _context.GetEx(CommonInputSteps.CoreDiamater);
         }
         
         [When(@"I calculate multiplication")]

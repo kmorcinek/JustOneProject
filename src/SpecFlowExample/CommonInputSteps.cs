@@ -7,6 +7,8 @@ namespace KMorcinek.SpecFlowExample
     public class CommonInputSteps
     {
         public static readonly NameWithType<int> InputValueInKey = new NameWithType<int>("inputValueIn");
+        public static readonly NameWithType<Tesla> FluxDensity = new NameWithType<Tesla>(nameof(FluxDensity) + "In");
+        public static readonly NameWithType<Millimetre> CoreDiamater = new NameWithType<Millimetre>(nameof(CoreDiamater) + "In");
 
         readonly ScenarioContext _context;
 

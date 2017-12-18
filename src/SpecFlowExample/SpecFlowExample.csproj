@@ -74,6 +74,7 @@
     <Compile Include="CommonOutputSteps.cs" />
     <Compile Include="Extensions\ContextScenarionExtensions.cs" />
     <Compile Include="Extensions\NameWithType.cs" />
+    <Compile Include="Millimetre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpecFlowExample.feature.xlsx.feature.cs">
       <AutoGen>True</AutoGen>
@@ -81,6 +82,7 @@
       <DependentUpon>SpecFlowExample.feature.xlsx.feature</DependentUpon>
     </Compile>
     <Compile Include="SpecFlowExampleSteps.cs" />
+    <Compile Include="Tesla.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
