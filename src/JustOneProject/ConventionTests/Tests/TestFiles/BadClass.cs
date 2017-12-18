@@ -2,7 +2,7 @@
 
 namespace JustOneProject.ConventionTests.Tests.TestFiles
 {
-    public class BadClass
+    public struct BadClass
     {
         public BadClass(IEnumerable<int> ints)
         {

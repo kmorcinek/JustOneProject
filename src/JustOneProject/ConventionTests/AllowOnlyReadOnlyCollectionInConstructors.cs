@@ -27,13 +27,13 @@ namespace JustOneProject.ConventionTests
 
         public static string GetClassName(string content)
         {
-            var regex = new Regex(@"class\s+(\w+)");
+            var regex = new Regex(@"(class|struct)\s+(\w+)");
 
             Match match = regex.Match(content);
 
             if (match.Success)
             {
-                return match.Groups[1].Value;
+                return match.Groups[2].Value;
             }
 
             return null;
