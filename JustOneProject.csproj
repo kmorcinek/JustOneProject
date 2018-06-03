@@ -12,7 +12,7 @@
     <AssemblyName>JustOneProject</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <StartupObject>JustOneProject.Program</StartupObject>
+    <StartupObject>JustOneProject.VariousStuff.ShowEnvironmentVariables</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -196,6 +196,7 @@
     <Compile Include="VariousStuff\ExampleEnums\Guards.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryConsumptionTests.cs" />
     <Compile Include="VariousStuff\MemoryConsumption\MemoryGuard.cs" />
+    <Compile Include="VariousStuff\ShowEnvironmentVariables.cs" />
     <Compile Include="VariousStuff\ValueObject\Money.cs" />
     <Compile Include="VariousStuff\MyResource.cs" />
     <Compile Include="VariousStuff\SynchronizationServiceMock.cs" />
